@@ -31,7 +31,8 @@ def generate_dataset(messages, client, model):
     [
         {
             "task": "Description of task",
-            "format": "json" or "python" or "regex"
+            "format": "json" or "python" or "regex",
+            "solution_criteria": "Key criteria for evaluatin the solution"
         },
         ...additional
     ]
@@ -76,6 +77,13 @@ Solution to Evaluate:
 <solution>
 {output}
 </solution>
+
+
+Criteria you should use to evaluate the solution:
+<criteria>
+{test_case["solution_criteria"]}
+</criteria>
+
 
 Output Format
 Provide your evaluation as a structured JSON object with the following fields, in this specific order:
